@@ -8,13 +8,20 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
         integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script>
+
+
+
+    </script>
     <title>Conecta Cidades</title>
 </head>
-
+   
 <body>
 
     <div class="container-fluid-md" id="topo">
-
         <div class="row d-flex justify-content-sm-between align-items-center ml-4 mt-4 mr-4" id="header">
 
             <div class="logo col-sm-6 align-items-center pl-5 ml-2">
@@ -55,17 +62,17 @@
 
             <div class="col-md-5" id="form-box">
 
-                <form action="" class="d-flex flex-column" id="form1">
+                <form action="dbConnection.php" method="post" onSubmit="window.location.reload()" class="d-flex flex-column" id="form1">
 
                     <p class="text-center" style="font-size: 16px; color: white;"><strong>Preencha seus dados</strong> e
                         receba as palestras no seu e-mail.<br>Sem
                         segredos.<br>Compartilhe à vontade!</p>
 
-                    <input type="text" placeholder="Seu nome...">
+                    <input type="text" name="nome" id="nome" placeholder="Seu nome...">
 
-                    <input type="email" placeholder="Seu e-mail...">
+                    <input type="email" name="email" id="email" placeholder="Seu e-mail...">
 
-                    <input type="text" placeholder="Seu telefone">
+                    <input type="phone" name="telefone" id="telefone" placeholder="Seu telefone">
 
                     <button type="submit" class="align-self-center" id="send1">ENVIAR</button>
 
@@ -267,18 +274,24 @@
             <p class="text-center col-9" style="font-size: 16px; color: white; font-family: 'Montserrat', sans-serif;">
                 Preencha seus dados e receba as<br>palestras no seu e-mail. Sem segredos.<br>Compartilhe à vontade!</p>
 
-            <form action="" class="d-flex justify-content-around w-100" id="form2">
+            <form action="dbConnection.php" method="post" onSubmit="window.location.reload()" class="d-flex flex-column w-100" id="form2">
 
-                <input type="text" placeholder="Seu nome...">
+                
+                <div class="inputs d-flex justify-content-between pb-4">
 
-                <input type="email" placeholder="Seu e-mail...">
+                    <input type="text" name="nome" id="nome" placeholder="Seu nome...">
+    
+                    <input type="email" name="email" id="email" placeholder="Seu e-mail...">
+    
+                    <input type="phone" name="telefone" id="telefone" placeholder="Seu telefone">
+                    
+                </div>
 
-                <input type="text" placeholder="Seu telefone">
+                <button type="submit" id="send2" class="w-25 align-self-center">Enviar</button>
 
-
+                
             </form>
 
-            <button type="submit" id="send2">Enviar</button>
         </div>
         <hr>
         <footer class="pl-5 ml-5 pb-3">

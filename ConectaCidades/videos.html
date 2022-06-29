@@ -13,22 +13,40 @@
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
         crossorigin="anonymous"></script>
     <script>
+
+        /* Filtra divs de acordo com a "tag" (Botões tela grande) */
         $(document).ready(function(){
             $('.categorias').click(function(){
-                $('.white').toggle();
+                var value = $(this).attr("data-categoria");
+                var valor = $('.white').attr("data-categoria");
+                var selected = $(this).attr("aria-pressed");
+
+                if(selected == true)  $(this).attr("aria-pressed", false);
+                else $(this).attr("aria-pressed", true);
+                console.log(selected);
+
+                $('.white').filter(function(){
+                    if ($(this).attr("data-categoria") == value || value.length == 0){
+                        $(this).toggle(true);
+                        
+                    } else {
+                        $(this).toggle(false);
+                    };
+                });
             });
         });
-
+        
+        /* Filtra divs de acordo com a "tag" (Select telas menores) */
         $(document).ready(function(){
             $('#categorias').on("change", function(){
                 var value = $(this).val();
-                console.log(value);
+                var valor = $('.white').attr("data-categoria");
                 $('.white').filter(function(){
-                    if ($(this).attr == value){
+                    if ($(this).attr("data-categoria") == value || value.length == 0){
                         $(this).toggle(true);
                     } else {
                         $(this).toggle(false);
-                    }
+                    }    
                 });
             });
         });
@@ -60,14 +78,14 @@
 
         <!-- CARROSSEL CATEGORIAS -->
 
-        <div class="green row d-flex w-100 my-2 align-items-center justify-content-around">
+        <div class="buttonRow row d-flex w-100 my-2 align-items-center justify-content-around">
 
-            <div class="categorias col-sm-1 align-items-center justify-content-center"><i class="fa fa-arrow-left"></i></div>
-            <div class="categorias col-sm-2 rounded-pill align-items-center justify-content-center">teste</div>
-            <div class="categorias col-sm-2 rounded-pill align-items-center justify-content-center">teste</div>
-            <div class="categorias col-sm-2 rounded-pill align-items-center justify-content-center">teste</div>
-            <div class="categorias col-sm-2 rounded-pill align-items-center justify-content-center">teste</div>
-            <div class="categorias col-sm-1 align-items-center justify-content-center"><i class="fa fa-arrow-right"></i></div>
+            <div class="flecha col-sm-1 align-items-center justify-content-center"><i class="fa fa-arrow-left"></i></div>
+            <div class="categorias col-sm-2 rounded-pill align-items-center justify-content-center" data-categoria="teste1" data-selected="false" tabindex="-1">teste1</div>
+            <div class="categorias col-sm-2 rounded-pill align-items-center justify-content-center" data-categoria="teste2" data-selected="false" tabindex="-1">teste2</div>
+            <div class="categorias col-sm-2 rounded-pill align-items-center justify-content-center" data-categoria="teste3" data-selected="false" tabindex="-1">teste3</div>
+            <div class="categorias col-sm-2 rounded-pill align-items-center justify-content-center" data-categoria="teste4" data-selected="false" tabindex="-1">teste4</div>
+            <div class="flecha col-sm-1 align-items-center justify-content-center"><i class="fa fa-arrow-right"></i></div>
 
             <select name="" id="categorias" class="d-sm-none">
                 <option value="" selected>Escolha uma categoria...</option>
@@ -78,18 +96,18 @@
             </select>
 
         </div>
-        <div class="videoRow row row-cols-md-4 d-flex w-100 h-auto pb-lg-5 justify-content-between">
+        <div class="videoRow row row-cols-md-4 d-flex w-100 h-auto pb-lg-5 justify-content-around">
 
             <div class="white col-md" data-categoria="teste1"></div>
-            <div class="white col-md"></div>
-            <div class="white col-md"></div>
-            <div class="white col-md"></div>
-            <div class="white col-md"></div>
-            <div class="white col-md"></div>
-            <div class="white col-md"></div>
-            <div class="white col-md"></div>
-            <div class="white col-md"></div>
-            <div class="white col-md align-items-center"></div>
+            <div class="white col-md" data-categoria="teste2"></div>
+            <div class="white col-md" data-categoria="teste1"></div>
+            <div class="white col-md" data-categoria="teste1"></div>
+            <div class="white col-md" data-categoria="teste1"></div>
+            <div class="white col-md" data-categoria="teste1"></div>
+            <div class="white col-md" data-categoria="teste1"></div>
+            <div class="white col-md" data-categoria="teste1"></div>
+            <div class="white col-md" data-categoria="teste2"></div>
+            <div class="white col-md align-items-center" data-categoria="teste1"></div>
             <!-- <div class="white col-lg-4 col-md-5 col-sm-8 mb-sm-4"></div>
             <div class="white col-lg-4 col-md-5 col-sm-8 mb-sm-4"></div>
             <div class="white col-lg-4 col-md-5 col-sm-8 mb-sm-4"></div>

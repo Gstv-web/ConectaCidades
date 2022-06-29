@@ -166,6 +166,13 @@ form p {
         align-items: center;
     }
 
+    .inputs {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        width: 90%;
+    }
+
     #form2 input {
         margin-top: 5px;
         margin-bottom: 25px;
@@ -181,8 +188,8 @@ form p {
     font-size: 20px;
     font-weight: bold;
     font-family: 'Inter', sans-serif;
-    padding: 1% 3% 1% 3%;
-    margin-top: 20px;
+    padding: 1% 1% 1% 1%;
+    margin-top: 10px;
 }
 
 /* HISTORIAS */
@@ -351,11 +358,6 @@ footer p {
 
 
 
-.green {
-    background-color: green;
-    height: 70px;
-}
-
 .imagem {
     height: max-content;
 }
@@ -373,15 +375,54 @@ footer p {
 
 /* CARROSSEL CATEGORIAS */
 
+.buttonRow {
+    height: 70px;
+}
+
 .categorias {
     height: 50%;
-    background-color: magenta;
+    border: 3px solid #13A0E2;
     cursor: pointer;
     display: flex;
 }
 
+.categorias:hover {
+    background-color: #13A0E2;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.categorias:focus {
+    background-color: #13A0E2 !important;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.flecha {
+    height: 100% !important;
+    display: flex;
+}
+
+.fa {
+    font-size: 25px;
+    color: #13A0E2;
+    padding: 7%;
+    border-radius: 50%;
+    align-self: auto;
+    cursor: pointer;
+}
+
+.fa:hover {
+    background-color: #13A0E2;
+    color: #ffffff;
+}
+
 @media screen and (min-width: 340px) and (max-width: 576px) {
     .categorias {
+        display: none;
+    }
+
+    .flecha {
         display: none;
     }
 

@@ -11,11 +11,7 @@
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
         crossorigin="anonymous"></script>
-    <script>
-
-
-
-    </script>
+    <script type="text/javascript" src="/scripts.js"></script>
     <title>Conecta Cidades</title>
 </head>
    
@@ -129,7 +125,7 @@
 
         <div class="row d-flex align-items-center" id="historias">
 
-            <div class="conteudo d-flex flex-column col-sm-5 mx-md-auto">
+            <div class="conteudo d-flex flex-column col-sm-6 mx-md-auto">
 
                 <p style="font-family: 'Inter', sans-serif; color: white; font-size: 22px; font-weight: 500;"
                     class="text-center text-sm-center">Conteúdo reunido para gestores públicos, atores políticos,
@@ -153,7 +149,7 @@
 
             <div class="d-flex flex-column align-items-center">
 
-                <img src="/Assets/TransformacaoDigital.png" class="transformacao img-fluid" alt="">
+                <img src="/Assets/TransformacaoDigital.png" class="transformacao" alt="">
                 <button class="queroAcessar w-auto justify-content-center">QUERO ACESSAR</button>
             </div>
 

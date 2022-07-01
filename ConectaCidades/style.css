@@ -43,7 +43,17 @@ html, body {
 @media screen and (max-width: 768px) {
     .logo {
         max-width: 70% !important;
-    }   
+    }
+    
+    #topo {
+        margin-left: 20px !important;
+        margin-right: 20px !important;
+    
+    }
+    #bg {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+    }
 }
 
 @media screen and (max-width: 576px) {
@@ -55,9 +65,11 @@ html, body {
 .conectaCidades {
     margin-top: 0;
 }
-/* #topo{
-    margin-bottom: -20px;
-} */
+
+#topo{
+    margin-left: 75px;
+    margin-right: 75px;
+}
 
 .logo {
     margin-top: 0 !important;
@@ -208,6 +220,8 @@ form p {
     background: url(/Assets/Background.png);
     background-size: cover;
     min-height: 100%;
+    padding-left: 75px;
+    padding-right: 75px;
 }
 
 .conteudo {
@@ -223,7 +237,7 @@ form p {
     .conteudo {
         padding-top: 25% !important;
         padding-bottom: 10% !important;
-        max-width: 60% !important;
+        max-width: 80% !important;
     }
 
     .video {
@@ -234,6 +248,11 @@ form p {
     #media {
         max-width: 100% !important;
         
+    }
+
+    .transformacao {
+        margin-top: 10% !important;
+        max-width: 90% !important;
     }
 
 }
@@ -256,6 +275,7 @@ h2 {
 
 .transformacao {
     margin-top: 10% !important;
+    max-width: 70%;
 }
 
 .queroAcessar {
@@ -366,12 +386,32 @@ footer p {
     margin-top: 10%;
 }
 
+#videoTop{
+    padding-left: 75px;
+    padding-right: 75px;
+}
+
 #bgVideos {
     background: url(/Assets/BackgroundVideos.png);
     background-size: cover;
     min-height: 100%;
+    padding-left: 75px;
+    padding-right: 75px;
 }
 
+@media screen and (max-width: 768px) {
+    #videoTop{
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+
+    #bgVideos{
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+
+}
 
 /* CARROSSEL CATEGORIAS */
 

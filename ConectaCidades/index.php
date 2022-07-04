@@ -12,6 +12,7 @@
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
         crossorigin="anonymous"></script>
     <script type="text/javascript" src="/scripts.js"></script>
+    
     <title>Conecta Cidades</title>
 </head>
    
@@ -58,7 +59,7 @@
 
             <div class="col-md-5" id="form-box">
 
-                <form action="dbConnection.php" method="post" onSubmit="window.location.reload()" class="d-flex flex-column" id="form1">
+                <form action="dbConnection.php" method="post" class="d-flex flex-column" id="form1">
 
                     <p class="text-center" style="font-size: 16px; color: white;"><strong>Preencha seus dados</strong> e
                         receba as palestras no seu e-mail.<br>Sem
@@ -70,10 +71,17 @@
 
                     <input type="phone" name="telefone" id="telefone" placeholder="Seu telefone">
 
-                    <button type="submit" class="align-self-center" id="send1">ENVIAR</button>
+                    <button type="submit" class="align-self-center" onclick="enviarAPI()" id="send1">ENVIAR</button>
 
                 </form>
+                
 
+                <script>
+                    $( "#form1" ).submit(function( event ) {
+                        alert( "Handler for .submit() called." );
+                        event.preventDefault();
+                    });
+                </script>
             </div>
 
 

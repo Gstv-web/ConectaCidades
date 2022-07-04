@@ -1,11 +1,50 @@
-const sdk = require('api')('@rd-station-dev-portal/v2.0#13qgon13l4d86f51');
 
+function enviarAPI(){
+  
+  const refresh = {
+    method: 'POST',
+    headers: {Accept: 'application/json',
+              'Content-Type': 'application/json'},
+              body: JSON.stringify({
+                "client_id": "a8cb4d4c-ed96-4cb7-b005-e16cc228345c",
+                "client_secret": "8af8083c49ca47d5b45278241ff97134",
+                "refresh_token": "e2n--1lHydGU1FFvA-lOWzf_93030Zrvr568CmmR0J8"
+              })
+  };
 
-sdk.auth('eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJodHRwczovL2FwaS5yZC5zZXJ2aWNlcyIsInN1YiI6ImRoRV9BbWExZTFlWXB5T0c4WnhtVkNhbVFjVTVfdjRQWTJPNVk4N2ZrdmdAY2xpZW50cyIsImF1ZCI6Imh0dHBzOi8vYXBwLnJkc3RhdGlvbi5jb20uYnIvYXBpL3YyLyIsImFwcF9uYW1lIjoiR2VyYWRvciBkZSBDb250YXRvcyIsImV4cCI6MTY1Njc3OTI2MiwiaWF0IjoxNjU2NjkyODYyLCJzY29wZSI6IiJ9.ZH7UWKvdWamWAUjOmxflT6yHjFo3jKetAwOqUSCdKsVHu43ImO0azahFQE7tRKwuDardIXnxb7Qm_X_8Y9dkEfwUGNDdxoG5Qut6QRBLBsqDAtHZyHpU7UpdHa7McW9uW37y5-wCheX8bvRJ5_WnNoPzs1VLenfpxxlLPIyfJyqXRYZ1nilkexViudCDxyWvn-q6oCJGScbqW3TbFQ8D7NBTlbTAnkMx075E9PRYc6dhTv8DbLp0nbwu3SE8OdtkOv7UMup9AhuUMqPSmQwjXVY-AhBu6JkgfSxQsbzTDym_ryeHDMKvhVu_HaB-Tzcf1qIWpxGnVYzwWFDXg6dWjg');
-sdk.post('/platform/contacts', {
-    name: document.querySelector('nome'),
-    email: document.querySelector('email'),
-    mobile_phone: document.querySelector('telefone')
-})
-  .then(res => console.log(res))
-  .catch(err => console.error(err));
+  console.log(refresh.body);
+
+  var newAuth ="";
+
+  fetch('https://api.rd.services/auth/token', refresh)
+    .then(response => {
+      response.json(),
+      console.log(response),
+      newAuth = response.access_token;
+      console.log(newAuth);
+    
+  
+    const options = {
+      method: 'POST',
+      headers: {Accept: 'application/json',
+                'Content-Type': 'application/json',
+                Authorization: 'Bearer ' + newAuth},
+                body: JSON.stringify({
+                                    name: document.querySelector('#nome').value,
+                                    email: document.querySelector('#email').value,
+                                    mobile_phone: document.querySelector('#telefone').value
+                                  })
+    };
+    
+    console.log(options.body);
+  
+    fetch('https://api.rd.services/platform/contacts', options)
+      .then(response => response.json())
+      .then(response => console.log(response))
+      .catch(err => console.error(err));
+  
+  
+  }
+
+)}; 
+

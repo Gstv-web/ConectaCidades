@@ -17,7 +17,7 @@
             $query = "INSERT INTO tb_formulario (nome, email, telefone) VALUES ('$nome', '$email', '$telefone')";
             $result = mysqli_query($link, $query);
 
-            header("Location: http://localhost:3000/videos.html");
+            // header("Location: http://localhost:3000/videos.html");
         } else {
             echo "<script>alert('nem apareceu o alert aqui');</script>";
             header ("Location: http://localhost:3000/index.php");

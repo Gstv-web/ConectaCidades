@@ -17,9 +17,8 @@ function enviarAPI(){
   var newAuth ="";
 
   fetch('https://api.rd.services/auth/token', refresh)
+    .then(reponse => reponse.json())
     .then(response => {
-      response.json(),
-      console.log(response),
       newAuth = response.access_token;
       console.log(newAuth);
     
@@ -43,7 +42,7 @@ function enviarAPI(){
       .then(response => console.log(response))
       .catch(err => console.error(err));
   
-  
+    console.log(response)
   }
 
 )}; 

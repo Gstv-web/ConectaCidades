@@ -76,12 +76,6 @@
                 </form>
                 
 
-                <script>
-                    $( "#form1" ).submit(function( event ) {
-                        alert( "Handler for .submit() called." );
-                        event.preventDefault();
-                    });
-                </script>
             </div>
 
 

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Css/owl.carousel.css">
+    <script src="/Js/jquery.min.js"></script>
+    <script src="/Js/owl.carousel.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $(".owl-carousel").owlCarousel({
+               loop: true,
+            });
+
+            var owl = $('.owl-carousel');
+            owl.owlCarousel();
+            // Go to the previous item
+            $('.prev').click(function() {
+                owl.trigger('prev.owl.carousel');
+            })
+            // Go to the next item
+            $('.next').click(function() {
+                owl.trigger('next.owl.carousel');
+            })
+        });
+    </script>
+</head>
+<body>
+    <div class="owl-carousel owl-theme owl-loaded">
+        <div class="owl-stage-outer">
+            <div class="owl-stage">
+                <div class="owl-item">1</div>
+                <div class="owl-item">2</div>
+                <div class="owl-item">3</div>
+                <div class="owl-item">4</div>
+                <div class="owl-item">5</div>
+            </div>
+        </div>
+        <div class="owl-nav">
+            <div class="prev">prev</div>
+            <div class="next">next</div>
+        </div>
+        <div class="owl-dots">
+            <div class="owl-dot active"><span></span></div>
+            <div class="owl-dot"><span></span></div>
+            <div class="owl-dot"><span></span></div>
+        </div>
+    </div>
+</body>
+</html>

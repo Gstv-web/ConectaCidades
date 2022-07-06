@@ -7,15 +7,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
         integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/Css/style.css">
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
         crossorigin="anonymous"></script>
-    <script type="text/javascript" src="/scripts.js"></script>
-    
+    <script type="text/javascript" src="/Js/scripts.js"></script>
+
     <title>Conecta Cidades</title>
 </head>
-   
+
 <body>
 
     <div class="container-fluid-md" id="topo">
@@ -46,7 +46,8 @@
 
                     <p style="font-size: 12px; font-weight: bold; margin-bottom: 0;">DESCUBRA COMO CIDADES FIZERAM AÇÕES
                         QUE SALVARAM VIDAS</p>
-                    <p class="text-sm-center" style="font-size: 37px; font-weight: bold; margin-bottom: 0;">As tendências 2022-2032 na
+                    <p class="text-sm-center" style="font-size: 37px; font-weight: bold; margin-bottom: 0;">As
+                        tendências 2022-2032 na
                         Transformação Digital em Órgãos Públicos</p>
                     <p style="font-size: 18px;"><span><strong>100% Gratuito.</strong></span> Feito para auxiliar
                         gestores públicos tomarem
@@ -59,7 +60,7 @@
 
             <div class="col-md-5" id="form-box">
 
-                <form action="dbConnection.php" method="post" class="d-flex flex-column" id="form1">
+                <form action="videos.html" method="post" class="d-flex flex-column" id="form1">
 
                     <p class="text-center" style="font-size: 16px; color: white;"><strong>Preencha seus dados</strong> e
                         receba as palestras no seu e-mail.<br>Sem
@@ -71,10 +72,18 @@
 
                     <input type="phone" name="telefone" id="telefone" placeholder="Seu telefone">
 
-                    <button type="submit" class="align-self-center" onclick="enviarAPI()" id="send1">ENVIAR</button>
+                    <button type="submit" class="align-self-center" onclick="enviarAPI('#form1')" id="send1">ENVIAR</button>
 
                 </form>
-                
+
+                <script>
+
+                    $("#form1").submit(function (event) {
+                        alert("Handler for .submit() called.");
+                        event.preventDefault();
+                    });
+
+                </script>
 
             </div>
 
@@ -272,23 +281,33 @@
             <p class="text-center col-9" style="font-size: 16px; color: white; font-family: 'Montserrat', sans-serif;">
                 Preencha seus dados e receba as<br>palestras no seu e-mail. Sem segredos.<br>Compartilhe à vontade!</p>
 
-            <form action="dbConnection.php" method="post" onSubmit="window.location.reload()" class="d-flex flex-column w-100" id="form2">
+            <form action="videos.html" method="post" class="d-flex flex-column w-100" id="form2">
 
-                
+
                 <div class="inputs d-flex justify-content-between pb-4">
 
                     <input type="text" name="nome" id="nome" placeholder="Seu nome...">
-    
+
                     <input type="email" name="email" id="email" placeholder="Seu e-mail...">
-    
+
                     <input type="phone" name="telefone" id="telefone" placeholder="Seu telefone">
-                    
+
                 </div>
 
-                <button type="submit" id="send2" class="w-25 align-self-center">Enviar</button>
+                <button type="submit" class="w-25 align-self-center" onclick="enviarAPI('#form2')" id="send2">Enviar</button>
 
-                
+                <script>
+
+                    $("#form2").submit(function (event) {
+                        alert("Handler for .submit() called.");
+                        event.preventDefault();
+                    });
+
+                </script>
+
             </form>
+
+
 
         </div>
         <hr>

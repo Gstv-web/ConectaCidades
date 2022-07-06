@@ -1,6 +1,7 @@
 
-function enviarAPI(){
+function enviarAPI(form){
   
+
   const refresh = {
     method: 'POST',
     headers: {Accept: 'application/json',
@@ -29,9 +30,9 @@ function enviarAPI(){
                 'Content-Type': 'application/json',
                 Authorization: 'Bearer ' + newAuth},
                 body: JSON.stringify({
-                                    name: document.querySelector('#nome').value,
-                                    email: document.querySelector('#email').value,
-                                    mobile_phone: document.querySelector('#telefone').value
+                                    name: document.querySelector(form).querySelector('#nome').value, //seleciona o id do formulário (param) e depois o nome do campo (querySelector) 
+                                    email: document.querySelector(form).querySelector('#email').value,
+                                    mobile_phone: document.querySelector(form).querySelector('#telefone').value
                                   })
     };
     
@@ -42,7 +43,7 @@ function enviarAPI(){
       .then(response => console.log(response))
       .catch(err => console.error(err));
   
-    console.log(response)
+    console.log(response);
   }
 
 )}; 

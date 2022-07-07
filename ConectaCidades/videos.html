@@ -2,21 +2,18 @@
 <html lang="pt-br">
 
 <head>
+    <title>Conecta Cidades - Vídeos</title>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
         integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
-    <link rel="stylesheet" href="/Css/style.css">
-    <link rel="stylesheet" href="/Css/owl.carousel.css">
-    <link rel="stylesheet" href="/Css/carouselstyle.css">
-    <link rel="stylesheet" href="owl.carousel.min.css">
-    <link rel="stylesheet" href="owl.theme.default.min.css">
-    <title>Conecta Cidades - Vídeos</title>
+    <link rel="stylesheet" href="./Css/style.css">
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
         crossorigin="anonymous"></script>
-
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script type="text/javascript" src="./Js/scripts.js"></script>
     <script>
 
         /* Filtra divs de acordo com a "tag" (Botões tela grande) */
@@ -56,30 +53,7 @@
             });
         });
 
-        /* Carrossel de categorias */
 
-        $(document).ready(function () {
-            $('.owl-carousel').owlCarousel({
-                loop: true,
-                dots: false,
-                center: true,
-                autoWidth: true,
-                autoHeight: true,
-                margin: 15,
-                items: 6,
-            });
-
-            var owl = $('.owl-carousel');
-            owl.owlCarousel();
-            // Go to the previous item
-            $('.prev').click(function () {
-                owl.trigger('prev.owl.carousel');
-            })
-            // Go to the next item
-            $('.next').click(function () {
-                owl.trigger('next.owl.carousel');
-            })
-        });
 
     </script>
 
@@ -109,44 +83,33 @@
 
         <!-- CARROSSEL CATEGORIAS -->
 
-        <div class="buttonRow row d-flex my-3">
+        
 
-            <div class="wrapper">
 
-                <div class="owl-carousel owl-theme owl-loaded">
 
-                    <div class="stageWrapper d-flex">
-                         <div class="owl-nav mr-5"><i class="fa fa-arrow-left prev"></i></div>
-                        <div class="owl-stage-outer">
-                        
+            <div class="teste">
 
-                            <div class="owl-stage">
-    
-                                <div class="owl-item categorias rounded-pill" data-categoria="teste1" data-selected="false"
-                                    tabindex="-1">teste1</div>
-                                <div class="owl-item categorias rounded-pill" data-categoria="teste2" data-selected="false"
-                                    tabindex="-1">teste2</div>
-                                <div class="owl-item categorias rounded-pill" data-categoria="teste3" data-selected="false"
-                                    tabindex="-1">teste3</div>
-                                <div class="owl-item categorias rounded-pill" data-categoria="teste4" data-selected="false"
-                                    tabindex="-1">teste4</div>
-                                <div class="owl-item categorias rounded-pill" data-categoria="teste5" data-selected="false"
-                                    tabindex="-1">teste5</div>
-                                <div class="owl-item categorias rounded-pill" data-categoria="teste6" data-selected="false"
-                                    tabindex="-1">teste6</div>
-                                <div class="owl-item categorias rounded-pill" data-categoria="teste7" data-selected="false"
-                                    tabindex="-1">teste7</div>
-    
-    
-                            </div>
+                <div class="categorias" data-categoria="teste1" data-selected="false" tabindex="-1">Teste1</div>
+                <div class="categorias" data-categoria="teste2" data-selected="false" tabindex="-1">Teste2</div>
+                <div class="categorias" data-categoria="teste3" data-selected="false" tabindex="-1">Teste3</div>
+                <div class="categorias" data-categoria="teste4" data-selected="false" tabindex="-1">Teste4</div>
 
-                        </div>
-
-                        <div class="owl-nav"><i class="fa fa-arrow-right next"></i></div>
-                    </div>
-
-                </div>
             </div>
+
+            <script>
+
+                $(document).ready(function () {
+                    $('.teste').slick({
+                        horizontal: true,
+                        infinite: true,
+                        draggable: true,
+                    });
+
+                    // var slick = $('.teste');
+                    // slick.slick();
+                });
+
+            </script>
 
             <select name="" id="categorias" class="d-sm-none">
                 <option value="" selected>Escolha uma categoria...</option>
@@ -156,7 +119,7 @@
                 <option value="teste4">Teste4</option>
             </select>
 
-        </div>
+        
         <div class="videoRow row row-cols-md-4 d-flex w-100 h-auto pb-lg-5 justify-content-around">
 
             <div class="white col-md" data-categoria="teste1"></div>
@@ -246,8 +209,9 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
         integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
         crossorigin="anonymous"></script>
-    <script src="/Js/jquery.min.js"></script>
-    <script src="/Js/owl.carousel.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js"
         integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2"
         crossorigin="anonymous"></script>

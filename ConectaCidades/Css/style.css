@@ -424,17 +424,6 @@ footer p {
     height: auto !important;
 }
 
-.stageWrapper {
-    height: 50px;
-}
-
-.owl-stage-outer {
-    height: 30px !important;
-}
-
-.owl-item {
-    width: 200px !important;
-}
 
 .categorias {
     height: 50%;

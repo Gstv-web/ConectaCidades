@@ -416,14 +416,18 @@ footer p {
 /* CARROSSEL CATEGORIAS */
 
 .buttonRow {
-    height: 70px;
+    height: auto;
+}
+
+.wrapper {
+    width: 100% !important;
 }
 
 .categorias {
     height: 50%;
     border: 3px solid #13A0E2;
     cursor: pointer;
-    display: flex;
+    
 }
 
 .categorias:hover {

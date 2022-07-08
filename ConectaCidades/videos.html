@@ -9,10 +9,11 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
         integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
     <link rel="stylesheet" href="./Css/style.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
         crossorigin="anonymous"></script>
-    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script type="text/javascript" src="./Js/scripts.js"></script>
     <script>
 
@@ -20,14 +21,14 @@
         $(document).ready(function () {
             $('.categorias').click(function () {
                 var value = $(this).attr("data-categoria");
-                var valor = $('.white').attr("data-categoria");
+                var valor = $('.videoCard').attr("data-categoria");
                 var selected = $(this).attr("aria-pressed");
 
                 if (selected == true) $(this).attr("aria-pressed", false);
                 else $(this).attr("aria-pressed", true);
                 console.log(selected);
 
-                $('.white').filter(function () {
+                $('videoCard').filter(function () {
                     if ($(this).attr("data-categoria") == value || value.length == 0) {
                         $(this).toggle(true);
 
@@ -42,8 +43,8 @@
         $(document).ready(function () {
             $('#categorias').on("change", function () {
                 var value = $(this).val();
-                var valor = $('.white').attr("data-categoria");
-                $('.white').filter(function () {
+                var valor = $('.videoCard').attr("data-categoria");
+                $('.videoCard').filter(function () {
                     if ($(this).attr("data-categoria") == value || value.length == 0) {
                         $(this).toggle(true);
                     } else {
@@ -85,16 +86,23 @@
 
         
 
+        <div class="wrapper d-flex justify-content-between">
 
-
+            <div class="flecha left"><i class="fa fa-arrow-left"></i></div>
             <div class="teste">
 
-                <div class="categorias" data-categoria="teste1" data-selected="false" tabindex="-1">Teste1</div>
-                <div class="categorias" data-categoria="teste2" data-selected="false" tabindex="-1">Teste2</div>
-                <div class="categorias" data-categoria="teste3" data-selected="false" tabindex="-1">Teste3</div>
-                <div class="categorias" data-categoria="teste4" data-selected="false" tabindex="-1">Teste4</div>
-
+                <div class="categorias mr-5 rounded-pill text-center" data-categoria="teste1" data-selected="false" tabindex="-1">Teste1</div>
+                <div class="categorias mr-5 rounded-pill text-center" data-categoria="teste2" data-selected="false" tabindex="-1">Teste2</div>
+                <div class="categorias mr-5 rounded-pill text-center" data-categoria="teste3" data-selected="false" tabindex="-1">Teste3</div>
+                <div class="categorias mr-5 rounded-pill text-center" data-categoria="teste4" data-selected="false" tabindex="-1">Teste4</div>
+                <div class="categorias mr-5 rounded-pill text-center" data-categoria="teste5" data-selected="false" tabindex="-1">Teste5</div>
+                <div class="categorias mr-5 rounded-pill text-center" data-categoria="teste6" data-selected="false" tabindex="-1">Teste6</div>
+                <div class="categorias mr-5 rounded-pill text-center" data-categoria="teste7" data-selected="false" tabindex="-1">Teste7</div>
+                <div class="categorias mr-5 rounded-pill text-center" data-categoria="teste8" data-selected="false" tabindex="-1">Teste8</div>
+    
             </div>
+            <div class="flecha right"><i class="fa fa-arrow-right"></i></div>
+        </div>
 
             <script>
 
@@ -103,10 +111,29 @@
                         horizontal: true,
                         infinite: true,
                         draggable: true,
+                        arrows: false,
+                        slidesToShow: 4,
+                        responsive: [
+                            {
+                                breakpoint: 768,
+                                settings:  {
+                                    slidesToShow: 3
+                                }
+                            }
+                        ]
                     });
 
-                    // var slick = $('.teste');
-                    // slick.slick();
+                    /* BOTÕES CUSTOMIZADOS */
+                    $('.left').click(function () {
+                        $('.teste').slick('slickPrev');
+                        $('.left').css("hover")
+                    });
+                   
+                    $('.right').click(function () {
+                        $('.teste').slick('slickNext');
+                    });
+
+                    /*                      */
                 });
 
             </script>
@@ -122,16 +149,134 @@
         
         <div class="videoRow row row-cols-md-4 d-flex w-100 h-auto pb-lg-5 justify-content-around">
 
+            <div class="videoCard col-md-4 mt-3 d-flex flex-column" data-categoria="teste2">
+            
+                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/pLBtSkBnfVU?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <div class="d-flex flex-wrap justify-content-around pt-2">
+                    <div class="nome d-flex rounded-pill align-self-baseline py-1 px-2">Murilo Cavalcanti</div>
+                    <div class="nome d-flex rounded-pill align-self-baseline py-1 px-2">Tabata Amaral</div>
+                    <div class="tags d-flex rounded-pill align-self-baseline py-1 px-2">Saúde</div>
+                    <div class="tags d-flex rounded-pill align-self-baseline py-1 px-2">Segurança</div>
+                    <div class="tags d-flex rounded-pill align-self-baseline py-1 px-2">Educação</div>
+                </div>
+                <h6 class="text-center mt-1">Título do vídeo</h6>
+
+            </div>
+            <div class="videoCard col-md-4 mt-3 d-flex flex-column" data-categoria="teste2">
+            
+                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/pLBtSkBnfVU?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <div class="d-flex justify-content-around pt-2">
+                    <div class="nome d-flex rounded-pill align-self-baseline py-1 px-2">Murilo Cavalcanti</div>
+                    <div class="nome d-flex rounded-pill align-self-baseline py-1 px-2">Tabata Amaral</div>
+                    <div class="tags d-flex rounded-pill align-self-baseline py-1 px-2">Saúde</div>
+                    <div class="tags d-flex rounded-pill align-self-baseline py-1 px-2">Segurança</div>
+                    <div class="tags d-flex rounded-pill align-self-baseline py-1 px-2">Educação</div>
+                </div>
+                <h6 class="text-center mt-1">Título do vídeo</h6>
+
+            </div>
+            <div class="videoCard col-md-4 mt-3 d-flex flex-column" data-categoria="teste1">
+            
+                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/pLBtSkBnfVU?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <div class="d-flex justify-content-around pt-2">
+                    <div class="nome d-flex rounded-pill align-self-baseline py-1 px-2">NomeSobrenome Palestrante</div>
+                    <div class="tags d-flex rounded-pill align-self-baseline py-1 px-2">Div para tag</div>
+                </div>
+                <h6 class="text-center mt-1">Título do vídeo</h6>
+
+            </div>
+            <div class="videoCard col-md-4 mt-3 d-flex flex-column" data-categoria="teste1">
+            
+                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/pLBtSkBnfVU?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <div class="d-flex justify-content-around pt-2">
+                    <div class="nome d-flex rounded-pill align-self-baseline py-1 px-2">NomeSobrenome Palestrante</div>
+                    <div class="tags d-flex rounded-pill align-self-baseline py-1 px-2">Div para tag</div>
+                </div>
+                <h6 class="text-center mt-1">Título do vídeo</h6>
+
+            </div>
+            <div class="videoCard col-md-4 mt-3 d-flex flex-column" data-categoria="teste2">
+            
+                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/pLBtSkBnfVU?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <div class="d-flex justify-content-around pt-2">
+                    <div class="nome d-flex rounded-pill align-self-baseline py-1 px-2">NomeSobrenome Palestrante</div>
+                    <div class="tags d-flex rounded-pill align-self-baseline py-1 px-2">Div para tag</div>
+                </div>
+                <h6 class="text-center mt-1">Título do vídeo</h6>
+
+            </div>
+            <div class="videoCard col-md-4 mt-3 d-flex flex-column" data-categoria="teste1">
+            
+                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/pLBtSkBnfVU?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <div class="d-flex justify-content-around pt-2">
+                    <div class="nome d-flex rounded-pill align-self-baseline py-1 px-2">NomeSobrenome Palestrante</div>
+                    <div class="tags d-flex rounded-pill align-self-baseline py-1 px-2">Div para tag</div>
+                </div>
+                <h6 class="text-center mt-1">Título do vídeo</h6>
+
+            </div>
+            <div class="videoCard col-md-4 mt-3 d-flex flex-column" data-categoria="teste1">
+            
+                <iframe class="embed-responsive-item"  src="https://www.youtube.com/embed/pLBtSkBnfVU?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <div class="d-flex justify-content-around pt-2">
+                    <div class="nome d-flex rounded-pill align-self-baseline py-1 px-2">NomeSobrenome Palestrante</div>
+                    <div class="tags d-flex rounded-pill align-self-baseline py-1 px-2">Div para tag</div>
+                </div>
+                <h6 class="text-center mt-1">Título do vídeo</h6>
+
+            </div>
+            <div class="videoCard col-md-4 mt-3 d-flex flex-column" data-categoria="teste1">
+            
+                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/pLBtSkBnfVU?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <div class="d-flex justify-content-around pt-2">
+                    <div class="nome d-flex rounded-pill align-self-baseline py-1 px-2">NomeSobrenome Palestrante</div>
+                    <div class="tags d-flex rounded-pill align-self-baseline py-1 px-2">Div para tag</div>
+                </div>
+                <h6 class="text-center mt-1">Título do vídeo</h6>
+
+            </div>
+            <div class="videoCard col-md-4 mt-3 d-flex flex-column" data-categoria="teste2">
+            
+                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/pLBtSkBnfVU?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <div class="d-flex justify-content-around pt-2">
+                    <div class="nome d-flex rounded-pill align-self-baseline py-1 px-2">NomeSobrenome Palestrante</div>
+                    <div class="tags d-flex rounded-pill align-self-baseline py-1 px-2">Div para tag</div>
+                </div>
+                <h6 class="text-center mt-1">Título do vídeo</h6>
+
+            </div>
+            <div class="videoCard col-md-4 mt-3 d-flex flex-column align-self-center" data-categoria="teste1">
+            
+                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/pLBtSkBnfVU?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <div class="d-flex justify-content-around pt-2">
+                    <div class="nome d-flex rounded-pill align-self-baseline py-1 px-2">NomeSobrenome Palestrante</div>
+                    <div class="tags d-flex rounded-pill align-self-baseline py-1 px-2">Div para tag</div>
+                </div>
+                <h6 class="text-center mt-1">Título do vídeo</h6>
+
+            </div>
+            
+            
+            <!-- <iframe class="col-md-4 mt-3" data-categoria="teste2" src="https://www.youtube.com/embed/pLBtSkBnfVU?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe class="col-md-4 mt-3" data-categoria="teste1" src="https://www.youtube.com/embed/pLBtSkBnfVU?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe class="col-md-4 mt-3" data-categoria="teste1" src="https://www.youtube.com/embed/pLBtSkBnfVU?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe class="col-md-4 mt-3" data-categoria="teste2" src="https://www.youtube.com/embed/pLBtSkBnfVU?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe class="col-md-4 mt-3" data-categoria="teste1" src="https://www.youtube.com/embed/pLBtSkBnfVU?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe class="col-md-4 mt-3" data-categoria="teste3" src="https://www.youtube.com/embed/pLBtSkBnfVU?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe class="col-md-4 mt-3" data-categoria="teste1" src="https://www.youtube.com/embed/pLBtSkBnfVU?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe class="col-md-4 mt-3" data-categoria="teste1" src="https://www.youtube.com/embed/pLBtSkBnfVU?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe class="col-md-4 mt-3 align-self-center" data-categoria="teste1" src="https://www.youtube.com/embed/pLBtSkBnfVU?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+             -->
+
+            <!-- <div class="white col-md" data-categoria="teste2"></div>
+            <div class="white col-md" data-categoria="teste1"></div>
+            <div class="white col-md" data-categoria="teste1"></div>
+            <div class="white col-md" data-categoria="teste1"></div>
+            <div class="white col-md" data-categoria="teste1"></div>
+            <div class="white col-md" data-categoria="teste1"></div>
             <div class="white col-md" data-categoria="teste1"></div>
             <div class="white col-md" data-categoria="teste2"></div>
-            <div class="white col-md" data-categoria="teste1"></div>
-            <div class="white col-md" data-categoria="teste1"></div>
-            <div class="white col-md" data-categoria="teste1"></div>
-            <div class="white col-md" data-categoria="teste1"></div>
-            <div class="white col-md" data-categoria="teste1"></div>
-            <div class="white col-md" data-categoria="teste1"></div>
-            <div class="white col-md" data-categoria="teste2"></div>
-            <div class="white col-md align-items-center" data-categoria="teste1"></div>
+            <div class="white col-md align-self-center" data-categoria="teste1"></div> -->
             <!-- <div class="white col-lg-4 col-md-5 col-sm-8 mb-sm-4"></div>
             <div class="white col-lg-4 col-md-5 col-sm-8 mb-sm-4"></div>
             <div class="white col-lg-4 col-md-5 col-sm-8 mb-sm-4"></div>
@@ -209,9 +354,9 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
         integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
         crossorigin="anonymous"></script>
-    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js"
         integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2"
         crossorigin="anonymous"></script>

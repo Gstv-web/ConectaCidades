@@ -2,39 +2,37 @@
 <html lang="pt-br">
 
 <head>
+    <title>Conecta Cidades - Vídeos</title>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
         integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
-    <link rel="stylesheet" href="/Css/style.css">
-    <link rel="stylesheet" href="/Css/owl.carousel.css">
-    <link rel="stylesheet" href="/Css/carouselstyle.css">
-    <title>Conecta Cidades - Vídeos</title>
+    <link rel="stylesheet" href="./Css/style.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
         crossorigin="anonymous"></script>
-    <script src="/Js/jquery.min.js"></script>
-    <script src="/Js/owl.carousel.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script type="text/javascript" src="./Js/scripts.js"></script>
     <script>
 
         /* Filtra divs de acordo com a "tag" (Botões tela grande) */
         $(document).ready(function () {
             $('.categorias').click(function () {
                 var value = $(this).attr("data-categoria");
-                var valor = $('.white').attr("data-categoria");
+                var valor = $('.videoCard').attr("data-categoria");
                 var selected = $(this).attr("aria-pressed");
 
                 if (selected == true) $(this).attr("aria-pressed", false);
                 else $(this).attr("aria-pressed", true);
-                console.log(selected);
 
-                $('.white').filter(function () {
+                $('.videoCard').filter(function () {
                     if ($(this).attr("data-categoria") == value || value.length == 0) {
-                        $(this).toggle(true);
+                        $(this).attr('style', '');
 
                     } else {
-                        $(this).toggle(false);
+                        $(this).attr('style', 'display: none !important');
                     };
                 });
             });
@@ -44,35 +42,18 @@
         $(document).ready(function () {
             $('#categorias').on("change", function () {
                 var value = $(this).val();
-                var valor = $('.white').attr("data-categoria");
-                $('.white').filter(function () {
+                var valor = $('.videoCard').attr("data-categoria");
+                $('.videoCard').filter(function () {
                     if ($(this).attr("data-categoria") == value || value.length == 0) {
-                        $(this).toggle(true);
+                        $(this).attr('style', '');
                     } else {
-                        $(this).toggle(false);
+                        $(this).attr('style', 'display: none !important');
                     }
                 });
             });
         });
 
-        /* Carrossel de categorias */
 
-        $(document).ready(function () {
-            $('.owl-carousel').owlCarousel({
-               loop: true,
-            });
-
-            var owl = $('.owl-carousel');
-            owl.owlCarousel();
-            // Go to the previous item
-            $('.prev').click(function() {
-                owl.trigger('prev.owl.carousel');
-            })
-            // Go to the next item
-            $('.next').click(function() {
-                owl.trigger('next.owl.carousel');
-            })
-        });
 
     </script>
 
@@ -85,7 +66,7 @@
         <div class="d-flex flex-column col-sm-8 align-items-center text-center">
 
             <div class="imagem d-flex col-sm-5 pb-5">
-                <img src="/Assets/LogoHorizontal.png" class="img-fluid" alt="">
+                <img src="./Assets/LogoHorizontal.png" class="img-fluid" alt="">
             </div>
 
             <div class="d-flex flex-column col-xl-7">
@@ -102,32 +83,59 @@
 
         <!-- CARROSSEL CATEGORIAS -->
 
-        <div class="buttonRow row d-flex w-100 my-2 align-items-center justify-content-around">
+        
 
-            <div class="owl-carousel owl-theme owl-loaded">
+        <div class="wrapper d-flex justify-content-between">
 
-                <div class="owl-stage-outer d-flex align-items-center w-100">
-    
-                    <div class="owl-stage d-flex align-items-center w-100">
-    
-                        <div class="owl-nav flecha col-sm-1 align-items-center justify-content-center"><i class="fa fa-arrow-left owl-prev"></i></div>
-                        <div class="owl-item categorias col-sm-2 rounded-pill align-items-center justify-content-center"
-                            data-categoria="teste1" data-selected="false" tabindex="-1">teste1</div>
-                        <div class="owl-item categorias col-sm-2 rounded-pill align-items-center justify-content-center"
-                            data-categoria="teste2" data-selected="false" tabindex="-1">teste2</div>
-                        <div class="owl-item categorias col-sm-2 rounded-pill align-items-center justify-content-center"
-                            data-categoria="teste3" data-selected="false" tabindex="-1">teste3</div>
-                        <div class="owl-item categorias col-sm-2 rounded-pill align-items-center justify-content-center"
-                            data-categoria="teste4" data-selected="false" tabindex="-1">teste4</div>
-                        <div class="owl-item categorias col-sm-2 rounded-pill align-items-center justify-content-center"
-                            data-categoria="teste4" data-selected="false" tabindex="-1">teste5</div>
-                        <div class="owl-nav flecha col-sm-1 align-items-center justify-content-center"><i class="fa fa-arrow-right owl-next"></i></div>
-    
-                    </div>
-    
-                </div>
+            <div class="flecha left"><i class="fa fa-arrow-left"></i></div>
+            <div class="teste">
 
+                <div class="categorias mr-5 rounded-pill text-center" data-categoria="teste1" data-selected="false" tabindex="-1">Teste1</div>
+                <div class="categorias mr-5 rounded-pill text-center" data-categoria="teste2" data-selected="false" tabindex="-1">Teste2</div>
+                <div class="categorias mr-5 rounded-pill text-center" data-categoria="teste3" data-selected="false" tabindex="-1">Teste3</div>
+                <div class="categorias mr-5 rounded-pill text-center" data-categoria="teste4" data-selected="false" tabindex="-1">Teste4</div>
+                <div class="categorias mr-5 rounded-pill text-center" data-categoria="teste5" data-selected="false" tabindex="-1">Teste5</div>
+                <div class="categorias mr-5 rounded-pill text-center" data-categoria="teste6" data-selected="false" tabindex="-1">Teste6</div>
+                <div class="categorias mr-5 rounded-pill text-center" data-categoria="teste7" data-selected="false" tabindex="-1">Teste7</div>
+                <div class="categorias mr-5 rounded-pill text-center" data-categoria="teste8" data-selected="false" tabindex="-1">Teste8</div>
+    
             </div>
+            <div class="flecha right"><i class="fa fa-arrow-right"></i></div>
+        </div>
+
+            <script>
+
+                $(document).ready(function () {
+                    $('.teste').slick({
+                        horizontal: true,
+                        infinite: true,
+                        draggable: true,
+                        arrows: false,
+                        slidesToShow: 4,
+                        responsive: [
+                            {
+                                breakpoint: 768,
+                                settings:  {
+                                    slidesToShow: 3
+                                }
+                            }
+                        ]
+                    });
+
+                    /* BOTÕES CUSTOMIZADOS */
+                    $('.left').click(function () {
+                        $('.teste').slick('slickPrev');
+                        $('.left').css("hover")
+                    });
+                   
+                    $('.right').click(function () {
+                        $('.teste').slick('slickNext');
+                    });
+
+                    /*                      */
+                });
+
+            </script>
 
             <select name="" id="categorias" class="d-sm-none">
                 <option value="" selected>Escolha uma categoria...</option>
@@ -137,19 +145,137 @@
                 <option value="teste4">Teste4</option>
             </select>
 
-        </div>
+        
         <div class="videoRow row row-cols-md-4 d-flex w-100 h-auto pb-lg-5 justify-content-around">
 
+            <div class="videoCard col-md-4 mt-3 d-flex flex-column" data-categoria="teste2">
+            
+                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/pLBtSkBnfVU?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <div class="d-flex flex-wrap justify-content-around pt-2">
+                    <div class="nome d-flex rounded-pill align-self-baseline py-1 px-2">Murilo Cavalcanti</div>
+                    <div class="nome d-flex rounded-pill align-self-baseline py-1 px-2">Tabata Amaral</div>
+                    <div class="tags d-flex rounded-pill align-self-baseline py-1 px-2">Saúde</div>
+                    <div class="tags d-flex rounded-pill align-self-baseline py-1 px-2">Segurança</div>
+                    <div class="tags d-flex rounded-pill align-self-baseline py-1 px-2">Educação</div>
+                </div>
+                <h6 class="text-center mt-1">Título do vídeo</h6>
+
+            </div>
+            <div class="videoCard col-md-4 mt-3 d-flex flex-column" data-categoria="teste2">
+            
+                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/pLBtSkBnfVU?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <div class="d-flex justify-content-around pt-2">
+                    <div class="nome d-flex rounded-pill align-self-baseline py-1 px-2">Murilo Cavalcanti</div>
+                    <div class="nome d-flex rounded-pill align-self-baseline py-1 px-2">Tabata Amaral</div>
+                    <div class="tags d-flex rounded-pill align-self-baseline py-1 px-2">Saúde</div>
+                    <div class="tags d-flex rounded-pill align-self-baseline py-1 px-2">Segurança</div>
+                    <div class="tags d-flex rounded-pill align-self-baseline py-1 px-2">Educação</div>
+                </div>
+                <h6 class="text-center mt-1">Título do vídeo</h6>
+
+            </div>
+            <div class="videoCard col-md-4 mt-3 d-flex flex-column" data-categoria="teste2">
+            
+                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/pLBtSkBnfVU?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <div class="d-flex justify-content-around pt-2">
+                    <div class="nome d-flex rounded-pill align-self-baseline py-1 px-2">NomeSobrenome Palestrante</div>
+                    <div class="tags d-flex rounded-pill align-self-baseline py-1 px-2">Div para tag</div>
+                </div>
+                <h6 class="text-center mt-1">Título do vídeo</h6>
+
+            </div>
+            <div class="videoCard col-md-4 mt-3 d-flex flex-column" data-categoria="teste1">
+            
+                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/pLBtSkBnfVU?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <div class="d-flex justify-content-around pt-2">
+                    <div class="nome d-flex rounded-pill align-self-baseline py-1 px-2">NomeSobrenome Palestrante</div>
+                    <div class="tags d-flex rounded-pill align-self-baseline py-1 px-2">Div para tag</div>
+                </div>
+                <h6 class="text-center mt-1">Título do vídeo</h6>
+
+            </div>
+            <div class="videoCard col-md-4 mt-3 d-flex flex-column" data-categoria="teste3">
+            
+                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/pLBtSkBnfVU?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <div class="d-flex justify-content-around pt-2">
+                    <div class="nome d-flex rounded-pill align-self-baseline py-1 px-2">NomeSobrenome Palestrante</div>
+                    <div class="tags d-flex rounded-pill align-self-baseline py-1 px-2">Div para tag</div>
+                </div>
+                <h6 class="text-center mt-1">Título do vídeo</h6>
+
+            </div>
+            <div class="videoCard col-md-4 mt-3 d-flex flex-column" data-categoria="teste4">
+            
+                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/pLBtSkBnfVU?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <div class="d-flex justify-content-around pt-2">
+                    <div class="nome d-flex rounded-pill align-self-baseline py-1 px-2">NomeSobrenome Palestrante</div>
+                    <div class="tags d-flex rounded-pill align-self-baseline py-1 px-2">Div para tag</div>
+                </div>
+                <h6 class="text-center mt-1">Título do vídeo</h6>
+
+            </div>
+            <div class="videoCard col-md-4 mt-3 d-flex flex-column" data-categoria="teste1">
+            
+                <iframe class="embed-responsive-item"  src="https://www.youtube.com/embed/pLBtSkBnfVU?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <div class="d-flex justify-content-around pt-2">
+                    <div class="nome d-flex rounded-pill align-self-baseline py-1 px-2">NomeSobrenome Palestrante</div>
+                    <div class="tags d-flex rounded-pill align-self-baseline py-1 px-2">Div para tag</div>
+                </div>
+                <h6 class="text-center mt-1">Título do vídeo</h6>
+
+            </div>
+            <div class="videoCard col-md-4 mt-3 d-flex flex-column" data-categoria="teste1">
+            
+                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/pLBtSkBnfVU?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <div class="d-flex justify-content-around pt-2">
+                    <div class="nome d-flex rounded-pill align-self-baseline py-1 px-2">NomeSobrenome Palestrante</div>
+                    <div class="tags d-flex rounded-pill align-self-baseline py-1 px-2">Div para tag</div>
+                </div>
+                <h6 class="text-center mt-1">Título do vídeo</h6>
+
+            </div>
+            <div class="videoCard col-md-4 mt-3 d-flex flex-column" data-categoria="teste2">
+            
+                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/pLBtSkBnfVU?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <div class="d-flex justify-content-around pt-2">
+                    <div class="nome d-flex rounded-pill align-self-baseline py-1 px-2">NomeSobrenome Palestrante</div>
+                    <div class="tags d-flex rounded-pill align-self-baseline py-1 px-2">Div para tag</div>
+                </div>
+                <h6 class="text-center mt-1">Título do vídeo</h6>
+
+            </div>
+            <div class="videoCard col-md-4 mt-3 d-flex flex-column align-self-center" data-categoria="teste3">
+            
+                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/pLBtSkBnfVU?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <div class="d-flex justify-content-around pt-2">
+                    <div class="nome d-flex rounded-pill align-self-baseline py-1 px-2">NomeSobrenome Palestrante</div>
+                    <div class="tags d-flex rounded-pill align-self-baseline py-1 px-2">Div para tag</div>
+                </div>
+                <h6 class="text-center mt-1">Título do vídeo</h6>
+
+            </div>
+            
+            
+            <!-- <iframe class="col-md-4 mt-3" data-categoria="teste2" src="https://www.youtube.com/embed/pLBtSkBnfVU?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe class="col-md-4 mt-3" data-categoria="teste1" src="https://www.youtube.com/embed/pLBtSkBnfVU?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe class="col-md-4 mt-3" data-categoria="teste1" src="https://www.youtube.com/embed/pLBtSkBnfVU?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe class="col-md-4 mt-3" data-categoria="teste2" src="https://www.youtube.com/embed/pLBtSkBnfVU?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe class="col-md-4 mt-3" data-categoria="teste1" src="https://www.youtube.com/embed/pLBtSkBnfVU?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe class="col-md-4 mt-3" data-categoria="teste3" src="https://www.youtube.com/embed/pLBtSkBnfVU?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe class="col-md-4 mt-3" data-categoria="teste1" src="https://www.youtube.com/embed/pLBtSkBnfVU?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe class="col-md-4 mt-3" data-categoria="teste1" src="https://www.youtube.com/embed/pLBtSkBnfVU?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe class="col-md-4 mt-3 align-self-center" data-categoria="teste1" src="https://www.youtube.com/embed/pLBtSkBnfVU?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+             -->
+
+            <!-- <div class="white col-md" data-categoria="teste2"></div>
+            <div class="white col-md" data-categoria="teste1"></div>
+            <div class="white col-md" data-categoria="teste1"></div>
+            <div class="white col-md" data-categoria="teste1"></div>
+            <div class="white col-md" data-categoria="teste1"></div>
+            <div class="white col-md" data-categoria="teste1"></div>
             <div class="white col-md" data-categoria="teste1"></div>
             <div class="white col-md" data-categoria="teste2"></div>
-            <div class="white col-md" data-categoria="teste1"></div>
-            <div class="white col-md" data-categoria="teste1"></div>
-            <div class="white col-md" data-categoria="teste1"></div>
-            <div class="white col-md" data-categoria="teste1"></div>
-            <div class="white col-md" data-categoria="teste1"></div>
-            <div class="white col-md" data-categoria="teste1"></div>
-            <div class="white col-md" data-categoria="teste2"></div>
-            <div class="white col-md align-items-center" data-categoria="teste1"></div>
+            <div class="white col-md align-self-center" data-categoria="teste1"></div> -->
             <!-- <div class="white col-lg-4 col-md-5 col-sm-8 mb-sm-4"></div>
             <div class="white col-lg-4 col-md-5 col-sm-8 mb-sm-4"></div>
             <div class="white col-lg-4 col-md-5 col-sm-8 mb-sm-4"></div>
@@ -227,6 +353,9 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
         integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
         crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js"
         integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2"
         crossorigin="anonymous"></script>

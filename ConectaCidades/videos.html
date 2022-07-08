@@ -26,14 +26,13 @@
 
                 if (selected == true) $(this).attr("aria-pressed", false);
                 else $(this).attr("aria-pressed", true);
-                console.log(selected);
 
-                $('videoCard').filter(function () {
+                $('.videoCard').filter(function () {
                     if ($(this).attr("data-categoria") == value || value.length == 0) {
-                        $(this).toggle(true);
+                        $(this).attr('style', '');
 
                     } else {
-                        $(this).toggle(false);
+                        $(this).attr('style', 'display: none !important');
                     };
                 });
             });
@@ -46,9 +45,9 @@
                 var valor = $('.videoCard').attr("data-categoria");
                 $('.videoCard').filter(function () {
                     if ($(this).attr("data-categoria") == value || value.length == 0) {
-                        $(this).toggle(true);
+                        $(this).attr('style', '');
                     } else {
-                        $(this).toggle(false);
+                        $(this).attr('style', 'display: none !important');
                     }
                 });
             });
@@ -67,7 +66,7 @@
         <div class="d-flex flex-column col-sm-8 align-items-center text-center">
 
             <div class="imagem d-flex col-sm-5 pb-5">
-                <img src="/Assets/LogoHorizontal.png" class="img-fluid" alt="">
+                <img src="./Assets/LogoHorizontal.png" class="img-fluid" alt="">
             </div>
 
             <div class="d-flex flex-column col-xl-7">
@@ -175,26 +174,6 @@
                 <h6 class="text-center mt-1">Título do vídeo</h6>
 
             </div>
-            <div class="videoCard col-md-4 mt-3 d-flex flex-column" data-categoria="teste1">
-            
-                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/pLBtSkBnfVU?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                <div class="d-flex justify-content-around pt-2">
-                    <div class="nome d-flex rounded-pill align-self-baseline py-1 px-2">NomeSobrenome Palestrante</div>
-                    <div class="tags d-flex rounded-pill align-self-baseline py-1 px-2">Div para tag</div>
-                </div>
-                <h6 class="text-center mt-1">Título do vídeo</h6>
-
-            </div>
-            <div class="videoCard col-md-4 mt-3 d-flex flex-column" data-categoria="teste1">
-            
-                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/pLBtSkBnfVU?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                <div class="d-flex justify-content-around pt-2">
-                    <div class="nome d-flex rounded-pill align-self-baseline py-1 px-2">NomeSobrenome Palestrante</div>
-                    <div class="tags d-flex rounded-pill align-self-baseline py-1 px-2">Div para tag</div>
-                </div>
-                <h6 class="text-center mt-1">Título do vídeo</h6>
-
-            </div>
             <div class="videoCard col-md-4 mt-3 d-flex flex-column" data-categoria="teste2">
             
                 <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/pLBtSkBnfVU?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -206,6 +185,26 @@
 
             </div>
             <div class="videoCard col-md-4 mt-3 d-flex flex-column" data-categoria="teste1">
+            
+                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/pLBtSkBnfVU?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <div class="d-flex justify-content-around pt-2">
+                    <div class="nome d-flex rounded-pill align-self-baseline py-1 px-2">NomeSobrenome Palestrante</div>
+                    <div class="tags d-flex rounded-pill align-self-baseline py-1 px-2">Div para tag</div>
+                </div>
+                <h6 class="text-center mt-1">Título do vídeo</h6>
+
+            </div>
+            <div class="videoCard col-md-4 mt-3 d-flex flex-column" data-categoria="teste3">
+            
+                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/pLBtSkBnfVU?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <div class="d-flex justify-content-around pt-2">
+                    <div class="nome d-flex rounded-pill align-self-baseline py-1 px-2">NomeSobrenome Palestrante</div>
+                    <div class="tags d-flex rounded-pill align-self-baseline py-1 px-2">Div para tag</div>
+                </div>
+                <h6 class="text-center mt-1">Título do vídeo</h6>
+
+            </div>
+            <div class="videoCard col-md-4 mt-3 d-flex flex-column" data-categoria="teste4">
             
                 <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/pLBtSkBnfVU?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 <div class="d-flex justify-content-around pt-2">
@@ -245,7 +244,7 @@
                 <h6 class="text-center mt-1">Título do vídeo</h6>
 
             </div>
-            <div class="videoCard col-md-4 mt-3 d-flex flex-column align-self-center" data-categoria="teste1">
+            <div class="videoCard col-md-4 mt-3 d-flex flex-column align-self-center" data-categoria="teste3">
             
                 <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/pLBtSkBnfVU?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 <div class="d-flex justify-content-around pt-2">

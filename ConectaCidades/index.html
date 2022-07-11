@@ -2,18 +2,22 @@
 <html lang="pt-br">
 
 <head>
+    <title>Conecta Cidades</title>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
         integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
-    <link rel="stylesheet" href="/Css/style.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+        integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <link rel="stylesheet" href="./Css/style.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
         crossorigin="anonymous"></script>
-    <script type="text/javascript" src="/Js/scripts.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script type="text/javascript" src="./Js/scripts.js"></script>
 
-    <title>Conecta Cidades</title>
 </head>
 
 <body>
@@ -72,7 +76,8 @@
 
                     <input type="phone" name="telefone" id="telefone" placeholder="Seu telefone">
 
-                    <button type="submit" class="align-self-center" onclick="enviarAPI('#form1')" id="send1">ENVIAR</button>
+                    <button type="submit" class="align-self-center" onclick="enviarAPI('#form1')"
+                        id="send1">ENVIAR</button>
 
                 </form>
 
@@ -172,83 +177,306 @@
             <p style="font-family: 'Inter', sans-serif; color: white; font-size: 30px;" class="pb-4">Palestrantes</p>
 
 
+            <div class="speakerWrapper d-flex justify-content-between">
 
-            <div class="cards d-flex justify-content-between col-sm-12">
+                <div class="flecha left"><i class="fa fa-arrow-left"></i></div>
+                <div class="carrossel">
 
-                <div class="cardExternalArea d-flex flex-column align-content-center col-sm-2 mr-2">
+                    <div class="speakerCard d-flex flex-column align-items-center">
+                        <img src="./Assets/AlexHenry.jpg" class="pic img-fluid">
+                        <div class="nomeTexto d-flex flex-column mt-sm-4">
 
-                    <div class="pic d-flex justify-content-center"><img src="/Assets/Ellipse 1.png" alt=""
-                            class="pic align-self-center"></div>
+                            <p>Alex Henry</p>
+                            <p>Líder de equipe New School App </p>
 
-                    <div class="nomeTexto">
+                        </div>
 
-                        <p class="pt-3 text-center" style="font-weight: bold; font-size: 15px;">Nome Sobrenome</p>
-                        <p class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit tenetur
-                            quia cumque ad totam ex</p>
+                    </div>
+                    <div class="speakerCard d-flex flex-column align-items-center">
+                        <img src="./Assets/RobsonGaliano.jpg" class="pic img-fluid">
+                        <div class="nomeTexto d-flex flex-column mt-sm-4">
+
+                            <p>Robson Galiano</p>
+                            <p>CEO da Microtarget</p>
+
+                        </div>
+
+                    </div>
+                    <div class="speakerCard d-flex flex-column align-items-center">
+                        <img src="./Assets/FelipeCadena.jpg" class="pic img-fluid">
+                        <div class="nomeTexto d-flex flex-column mt-sm-4">
+
+                            <p>Felipe Cadena Muniz</p>
+                            <p>Secretário Executivo de Transformação Digital da Prefeitura do Recife</p>
+
+                        </div>
+
+                    </div>
+                    <div class="speakerCard d-flex flex-column align-items-center">
+                        <img src="./Assets/RodolfoFiori.jpg" class="pic img-fluid">
+                        <div class="nomeTexto d-flex flex-column mt-sm-4">
+
+                            <p>Rodolfo Fiori</p>
+                            <p>Co-fundador da Gove</p>
+
+                        </div>
+
+                    </div>
+                    <div class="speakerCard d-flex flex-column align-items-center">
+                        <img src="./Assets/Ellipse 1.png" class="pic img-fluid">
+                        <div class="nomeTexto d-flex flex-column mt-sm-4">
+
+                            <p>Aline (sem sobrenome, precisa de foto)</p>
+                            <p> Secretária de desenvolvimento econômico</p>
+
+                        </div>
+
+                    </div>
+                    <div class="speakerCard d-flex flex-column align-items-center">
+                        <img src="./Assets/MarlonLuz.jpg" class="pic img-fluid">
+                        <div class="nomeTexto d-flex flex-column mt-sm-4">
+
+                            <p>Marlon Luz (img pequena)</p>
+                            <p>Vereador da cidade de São Paulo</p>
+
+                        </div>
+
+                    </div>
+                    <div class="speakerCard d-flex flex-column align-items-center">
+                        <img src="./Assets/VivianeKawashima.jpg" class="pic img-fluid">
+                        <div class="nomeTexto d-flex flex-column mt-sm-4">
+
+                            <p>Viviane Kawashima</p>
+                            <p>Secretária executiva de Transformação Digital</p>
+
+                        </div>
+
+                    </div>
+                    <div class="speakerCard d-flex flex-column align-items-center">
+                        <img src="./Assets/Ellipse 1.png" class="pic img-fluid">
+                        <div class="nomeTexto d-flex flex-column mt-sm-4">
+
+                            <p>Rafael Figueiredo</p>
+                            <p>Secretário de Transformação Digital do Recife</p>
+
+                        </div>
+
+                    </div>
+                    <div class="speakerCard d-flex flex-column align-items-center">
+                        <img src="./Assets/MarceloToledo.jpg" class="pic img-fluid">
+                        <div class="nomeTexto d-flex flex-column mt-sm-4">
+
+                            <p>Marcelo Toledo</p>
+                            <p>Fundador do Um Bom App</p>
+
+                        </div>
+
+                    </div>
+                    <div class="speakerCard d-flex flex-column align-items-center">
+                        <img src="./Assets/FabioRevoredo.jpg" class="pic img-fluid">
+                        <div class="nomeTexto d-flex flex-column mt-sm-4">
+
+                            <p>Fábio Revorêdo</p>
+                            <p>Diretor de estratégias em saúde - Ti.Saúde</p>
+
+                        </div>
+
+                    </div>
+                    <div class="speakerCard d-flex flex-column align-items-center">
+                        <img src="./Assets/Ellipse 1.png" class="pic img-fluid">
+                        <div class="nomeTexto d-flex flex-column mt-sm-4">
+
+                            <p>Alexandre Cunha</p>
+                            <p>Diretor do Grupo Hapvida</p>
+
+                        </div>
+
+                    </div>
+                    <div class="speakerCard d-flex flex-column align-items-center">
+                        <img src="./Assets/CristinaMonteiro.jpg" class="pic img-fluid">
+                        <div class="nomeTexto d-flex flex-column mt-sm-4">
+
+                            <p>Cristina Monteiro</p>
+                            <p>Vereadora da cidade de São Paulo</p>
+
+                        </div>
+
+                    </div>
+                    <div class="speakerCard d-flex flex-column align-items-center">
+                        <img src="./Assets/Gabriel Perrusi.jpg" class="pic img-fluid">
+                        <div class="nomeTexto d-flex flex-column mt-sm-4">
+
+                            <p>Gabriel Perrusi</p>
+                            <p>Empreendedor</p>
+
+                        </div>
+
+                    </div>
+                    <div class="speakerCard d-flex flex-column align-items-center">
+                        <img src="./Assets/CarolinaGuimaraes.jpg" class="pic img-fluid">
+                        <div class="nomeTexto d-flex flex-column mt-sm-4">
+
+                            <p>Carolina Guimarães</p>
+                            <p>Trabalha com políticas públicas na 99</p>
+
+                        </div>
+
+                    </div>
+                    <div class="speakerCard d-flex flex-column align-items-center">
+                        <img src="./Assets/Ellipse 1.png" class="pic img-fluid">
+                        <div class="nomeTexto d-flex flex-column mt-sm-4">
+
+                            <p>Carol Badaró</p>
+                            <p>Empresa Quicon</p>
+
+                        </div>
+
+                    </div>
+                    <div class="speakerCard d-flex flex-column align-items-center">
+                        <img src="./Assets/LilianPrimo.jpg" class="pic img-fluid">
+                        <div class="nomeTexto d-flex flex-column mt-sm-4">
+
+                            <p>Lilian Primo</p>
+                            <p>Redatora da rádio Nova Brasil, fundadora de startup e mentora do instituto Êxito</p>
+
+                        </div>
+
+                    </div>
+                    <div class="speakerCard d-flex flex-column align-items-center">
+                        <img src="./Assets/FlavioMaranhao.jpg" class="pic img-fluid">
+                        <div class="nomeTexto d-flex flex-column mt-sm-4">
+
+                            <p>Flávio Maranhão</p>
+                            <p>??</p>
+
+                        </div>
+
+                    </div>
+                    <div class="speakerCard d-flex flex-column align-items-center">
+                        <img src="./Assets/Ellipse 1.png" class="pic img-fluid">
+                        <div class="nomeTexto d-flex flex-column mt-sm-4">
+
+                            <p>Dani Leite</p>
+                            <p>Sócia fundadora do Comida Invisível</p>
+
+                        </div>
+
+                    </div>
+                    <div class="speakerCard d-flex flex-column align-items-center">
+                        <img src="./Assets/leonardoCavalcantti.jpg" class="pic img-fluid">
+                        <div class="nomeTexto d-flex flex-column mt-sm-4">
+
+                            <p>Leonardo Cavalcantti</p>
+                            <p>Advogado, especialista em planejamento tributário e finanças, CEO da Linkana</p>
+    
+                        </div>
+
+                    </div>
+                    <div class="speakerCard d-flex flex-column align-items-center">
+                        <img src="./Assets/Ellipse 1.png" class="pic img-fluid">
+                        <div class="nomeTexto d-flex flex-column mt-sm-4">
+
+                            <p>Fábio (sobrenome)</p>
+                            <p>Auditor de carreira, conduz a superintendência da Controladoria Geral de São Paulo </p>
+    
+                        </div>
+
+                    </div>
+                    <div class="speakerCard d-flex flex-column align-items-center">
+                        <img src="./Assets/BrenoAlencar.jpg" class="pic img-fluid">
+                        <div class="nomeTexto d-flex flex-column mt-sm-4">
+
+                            <p>Breno Alencar</p>
+                            <p>Coordenador de projetos de dados abertos da prefeitura de Recife, desenvolvedor de software da Emprel</p>
+    
+                        </div>
+
+                    </div>
+                    <div class="speakerCard d-flex flex-column align-items-center">
+                        <img src="./Assets/TabataAmaral.jpg" class="pic img-fluid">
+                        <div class="nomeTexto d-flex flex-column mt-sm-4">
+
+                            <p>Tábata Amaral</p>
+                            <p>Advogado, especialista em planejamento tributário e finanças, CEO da Linkana</p>
+    
+                        </div>
+
+                    </div>
+                    <div class="speakerCard d-flex flex-column align-items-center">
+                        <img src="./Assets/MuriloCavalcanti.jpg" class="pic img-fluid">
+                        <div class="nomeTexto d-flex flex-column mt-sm-4">
+
+                            <p>Murilo Cavalcanti</p>
+                            <p>Secretário de segurança urbana do Recife</p>
+    
+                        </div>
+
+                    </div>
+                    <div class="speakerCard d-flex flex-column align-items-center">
+                        <img src="./Assets/Ellipse 1.png" class="pic img-fluid">
+                        <div class="nomeTexto d-flex flex-column mt-sm-4">
+
+                            <p>Raphael Gadelha</p>
+                            <p>Fundador e CEO da Dulino</p>
+    
+                        </div>
 
                     </div>
 
-                </div>
-
-                <div class="cardExternalArea d-flex flex-column align-content-center col-sm-2 mr-2">
-
-                    <div class="pic d-flex justify-content-center"><img src="/Assets/Ellipse 1.png" alt=""
-                            class="pic align-self-center"></div>
-                    <div class="nomeTexto">
-
-                        <p class="pt-3 text-center" style="font-weight: bold; font-size: 15px;">Nome Sobrenome</p>
-                        <p class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit tenetur
-                            quia cumque ad totam ex</p>
-
-                    </div>
 
                 </div>
-
-                <div class="cardExternalArea d-flex flex-column align-content-center col-md-2 col-sm-2 mr-2">
-
-                    <div class="pic d-flex justify-content-center"><img src="/Assets/Ellipse 1.png" alt=""
-                            class="pic align-self-center"></div>
-                    <div class="nomeTexto">
-
-                        <p class="pt-3 text-center" style="font-weight: bold; font-size: 15px;">Nome Sobrenome</p>
-                        <p class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit tenetur
-                            quia cumque ad totam ex</p>
-
-                    </div>
-
-                </div>
-
-                <div class="cardExternalArea d-flex flex-column align-content-center col-md-2 col-sm-2 mr-2">
-
-                    <div class="pic d-flex justify-content-center"><img src="/Assets/Ellipse 1.png" alt=""
-                            class="pic align-self-center"></div>
-                    <div class="nomeTexto">
-
-                        <p class="pt-3 text-center" style="font-weight: bold; font-size: 15px;">Nome Sobrenome</p>
-                        <p class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit tenetur
-                            quia cumque ad totam ex</p>
-
-                    </div>
-
-                </div>
-
-                <div class="cardExternalArea d-flex flex-column align-content-center col-md-2 col-sm-2">
-                    <div class="pic d-flex justify-content-center"><img src="/Assets/Ellipse 1.png" alt=""
-                            class="pic align-self-center"></div>
-                    <div class="nomeTexto">
-
-                        <p class="pt-3 text-center" style="font-weight: bold; font-size: 15px;">Nome Sobrenome</p>
-                        <p class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit tenetur
-                            quia cumque ad totam ex</p>
-
-                    </div>
-
-                </div>
-
-
-
+                <div class="flecha right"><i class="fa fa-arrow-right"></i></div>
             </div>
 
+            <script>
+
+                $(document).ready(function() {
+                    $('.carrossel').slick({
+                        horizontal: true,
+                        infinite: true,
+                        draggable: true,
+                        arrows: false,
+                        slidesToShow: 5,
+                        slidesToScroll: 3,
+                        initialSlide: 0,
+                        responsive: [
+                            {
+                                brakpoint: 850,
+                                settings: {
+                                    slidesToShow: 4,
+                                    slidesToScroll: 1
+                                }
+                            },
+                            {
+                                breakpoint: 576,
+                                settings: {
+                                    vertical: true,
+                                    draggable: true,
+                                    infinite: true,
+                                    slidesToShow: 4,
+                                    slidesToScroll: 2
+                                }
+                            }
+
+                        ]
+                    });
+
+                    
+                    $('.left').click(function () {
+                        $('.carrossel').slick('slickPrev');
+                        $('.left').css("hover")
+                    });
+                   
+                    $('.right').click(function () {
+                        $('.carrossel').slick('slickNext');
+                    });
+                });
+
+                $(document).ready(function () {
+                    
+                });
+
+            </script>
 
             <button class="queroAcessar w-auto mt-5">QUERO ACESSAR</button>
 
@@ -294,7 +522,8 @@
 
                 </div>
 
-                <button type="submit" class="w-25 align-self-center" onclick="enviarAPI('#form2')" id="send2">Enviar</button>
+                <button type="submit" class="w-25 align-self-center" onclick="enviarAPI('#form2')"
+                    id="send2">Enviar</button>
 
                 <script>
 
@@ -322,9 +551,16 @@
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
         crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
         crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js"
+        integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2"
+        crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/594024fb96.js" crossorigin="anonymous"></script>
 </body>
 
 </html>

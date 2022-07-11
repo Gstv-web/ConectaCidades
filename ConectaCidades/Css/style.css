@@ -6,7 +6,8 @@
     box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
     height: 100%;
 }
 
@@ -20,7 +21,7 @@ html, body {
         max-width: 80% !important;
         margin: auto !important;
     }
-    
+
     #header {
         justify-content: center !important;
     }
@@ -37,19 +38,20 @@ html, body {
     .logo {
         max-width: 60% !important;
         /* align-self: center !important; */
-    }   
+    }
 }
 
 @media screen and (max-width: 768px) {
     .logo {
         max-width: 70% !important;
     }
-    
+
     #topo {
         margin-left: 20px !important;
         margin-right: 20px !important;
-    
+
     }
+
     #bg {
         padding-left: 20px !important;
         padding-right: 20px !important;
@@ -59,14 +61,14 @@ html, body {
 @media screen and (max-width: 576px) {
     .logo {
         max-width: 80% !important;
-    }   
+    }
 }
-    
+
 .conectaCidades {
     margin-top: 0;
 }
 
-#topo{
+#topo {
     margin-left: 75px;
     margin-right: 75px;
 }
@@ -104,7 +106,7 @@ li {
 }
 
 #saibaMais {
-    border:none;
+    border: none;
     border-radius: 15px;
     background-color: #13A0E2;
     color: white;
@@ -160,7 +162,7 @@ form p {
     width: 85%;
 }
 
-#form2  input{
+#form2 input {
     border: none;
     border-radius: 14px;
     padding: 7px;
@@ -172,7 +174,7 @@ form p {
         width: 90%;
     }
 
-    #form2{
+    #form2 {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -247,7 +249,7 @@ form p {
 
     #media {
         max-width: 100% !important;
-        
+
     }
 
     .transformacao {
@@ -295,45 +297,58 @@ h2 {
     border: 1px solid #000;
 } */
 
+.speakerWrapper {
+    width: 100% !important;
+    height: auto !important;
+}
+
+.carrossel {
+    max-width: 90% !important;
+}
+
 @media screen and (max-width: 576px) {
-    .cardExternalArea {
+    .speakerCard {
         align-items: center !important;
         justify-content: center !important;
         flex-direction: row !important;
         align-items: center !important;
-        padding: 0 !important;
-        padding-bottom: 5% !important; 
+        padding-bottom: 5% !important;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .pic {
+        width: 40% !important;
+        margin-right: 10% !important;
     }
 
     .nomeTexto {
-        display: flex;
-        flex-direction: column;
-        text-align: justify !important;
+        min-width: 50% !important;
     }
+}
 
-    .cards {
-        flex-direction: column !important;
-        margin-left: auto !important;
-        margin-right: auto !important;
+@media screen and (max-width: 768px) {
+    .speakerWrapper {
+        padding-left: 50px !important;
     }
 }
 
 .pic {
     margin-top: 0 !important;
+    border-radius: 50%;
 }
 
-.cardExternalArea p {
+.speakerCard {
+    justify-content: center !important;
+    margin-right: 25px;
+}
+
+.nomeTexto p {
     color: white;
+    text-align: center;
 }
 
-.leftArrow {
-    padding-right: 0;
-    padding-left: 0;
-}
 
-.rightArrow {
-    padding-right: 0;
-}
 
 /* MOCK */
 
@@ -345,7 +360,7 @@ h2 {
         margin-bottom: 30px;
         align-self: center !important;
     }
-    
+
     #mockP {
         width: 75% !important;
     }
@@ -353,7 +368,7 @@ h2 {
 
 #mock {
     margin-top: 0 !important;
-   
+
 }
 
 #mockP {
@@ -364,12 +379,12 @@ h2 {
 /* FOOTER */
 
 hr {
-    border-color : white;
+    border-color: white;
     width: 100%;
 }
 
 footer p {
-    color:white;
+    color: white;
     font-size: 12px;
 }
 
@@ -386,7 +401,7 @@ footer p {
     margin-top: 10%;
 }
 
-#videoTop{
+#videoTop {
     padding-left: 75px;
     padding-right: 75px;
 }
@@ -400,12 +415,12 @@ footer p {
 }
 
 @media screen and (max-width: 768px) {
-    #videoTop{
+    #videoTop {
         padding-left: 50px;
         padding-right: 50px;
     }
 
-    #bgVideos{
+    #bgVideos {
         padding-left: 30px;
         padding-right: 30px;
     }
@@ -432,7 +447,7 @@ footer p {
 .categorias {
     border: 3px solid #13A0E2;
     cursor: pointer;
-    
+
 }
 
 .categorias:hover {
@@ -525,7 +540,7 @@ iframe {
     .textImg {
         flex-direction: column !important;
     }
-    
+
     .texto {
         margin-right: auto !important;
         margin-left: auto !important;
